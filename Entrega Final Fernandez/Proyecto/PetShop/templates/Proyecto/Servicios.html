@@ -1,0 +1,24 @@
+{% extends 'Proyecto/base.html' %}
+
+
+{% block servicios %}
+
+<li><a class="dropdown-item" href="{% url 'servicios' %} ">Nuestros Servicios</a></li> 
+
+
+{% endblock servicios %}
+    
+    {% block cuerpo_servicio %}
+    <body>
+        <div>
+            
+             {% for Servicios in servicios %}
+                
+                 {{Servicios.servicio}} {{Servicios.horario}}  {{Servicios.whatsapp}}
+                
+            {% endfor %} 
+        </div>
+    </body>
+        
+    {% endblock cuerpo_servicio %}
+        
