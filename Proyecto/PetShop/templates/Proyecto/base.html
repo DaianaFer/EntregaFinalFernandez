@@ -59,19 +59,23 @@
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
-                            Carrito
+                             Carrito
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                             </button>
-                             {% block login_salir %}
-                             <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'salir' %} "> Salir</a></li> 
-                             {% endblock login_salir %}
-                                 
+                        </button>
+                        </form>
+                    </div>  
+                   
+                        {% block login_salir %}
+                             <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'salir' %} "><button> Salir </button></a></li> 
+                        {% endblock login_salir %}
+                    
+                    </div>           
                                 
                        
-                    </form>
                    
-                </div>
-            </div>
+                   
+                
+            
         </nav>
         <!-- Header-->
         <header class="bg-dark py-5">
