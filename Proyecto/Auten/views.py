@@ -39,6 +39,12 @@ def login_view(request):
        formulario = AuthenticationForm()        
        return render(request, "Auten/login.html", {"form": formulario, "errores": ["Registro no valido"]})    
       
+def logout_view(request):
+   
+    logout(request)
+    return render(request, "Auten/salir.html")
+    
+
 def register_views(request):
         
     if request.method == "GET":
@@ -52,17 +58,12 @@ def register_views(request):
             form.save()
     
         return redirect("inicio")    
-    
-def logout_view(request):
-   
-    logout(request)
-    return render(request, "Auten/salir.html")
-
 
 @login_required
 def editar_usuario(request):
+   
     if request.method == "GET":
         form = UserEditForm()
-        return render(request, "Proyecto/editar_usuario.html", {"form": form})
+        return render(request, "Auten/editar_usuario.html", {"form": form})
 
 

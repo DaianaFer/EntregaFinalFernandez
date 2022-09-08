@@ -2,13 +2,16 @@
 
 
 
-{% block contenido %}
-    <form method="post"> 
+{% block editar_usuario %}
+
+<p><h5>Editar informacion de {{request.user.username}}
+
+<center><form method="post"> 
 {% csrf_token %}
 {{form.as_p}}
 <input type="submit" value="editar">
 
-    </form>
+</form></center></h5> </p>
 
-{% endblock contenido %}
+{% endblock  %}
     
