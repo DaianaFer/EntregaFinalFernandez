@@ -31,7 +31,11 @@
                          {% block login %}
                          <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'login' %} "> Inicio Sesion</a></li> 
                          {% endblock login %}      
-                                
+                                 {% block login_salir %}
+                    
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'salir' %} ">Salir</a></li> 
+                    
+                    {% endblock login_salir %}
                        
                         
                             <li class="nav-item dropdown">
@@ -52,22 +56,22 @@
                                 <li><a class="dropdown-item" href="{% url 'contactos' %}">Contacto</a></li>  
                                 
                                 {% endblock contacto %}
-                               
+                                
                             </ul>
                         </li>
                     </ul>
+                   
+                   
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
-                             Carrito
+                            
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                         </form>
                     </div>  
                    
-                        {% block login_salir %}
-                             <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'salir' %} "><button> Salir </button></a></li> 
-                        {% endblock login_salir %}
+                       
                     
                     </div>           
                                 
@@ -78,11 +82,13 @@
             
         </nav>
         <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">PetShop Animalia</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Bienvenidos a nuestra tienda online!</p>
+         
+        <header class="bg- py-5">
+            <div class="container px-2 px-lg-3 my-3">
+                <div class="text-center text-dark">
+                    <h1 class="display-4 fw-bolder">PetShop Animalia</h1><img src="https://www.experta.com.ar/blogg/wp-content/uploads/sites/2/2019/01/mascotas.jpg" >
+                    <p class="lead fw-normal text-dark-50 mb-0">Bienvenidos a nuestra tienda online!</p>
+                   
                 </div>
             </div>
         </header>
