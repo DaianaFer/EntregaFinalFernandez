@@ -2,6 +2,10 @@ from django.shortcuts import render
 from PetShop.models import *
 from PetShop.forms import *
 from django.http import *
+from Auten.forms import*
+from Auten.models import *
+from django.contrib.auth.decorators import*
+
 
 def producto_filtro(request):
     listado_productos = Productos.objects.all()
@@ -21,8 +25,11 @@ def producto_filtro(request):
     
     
 def inicio(request):
+    
+     avatar = Avatar.objects.filter(usuario = request.user).first()
+     context = {'imagen': avatar.imagen.url}
         
-    return render(request, "Proyecto/base.html")
+     return render(request, "Proyecto/base.html", context)
 
 def servicios(request):
     menu1 = Servicios.objects.all()
@@ -32,5 +39,12 @@ def contacto(request):
    menu2 = Contacto.objects.all()
    return render(request, "Proyecto/Contacto.html", {"contactos":menu2})
 
-
+@login_required
+def agregar_avatar(request):
+    
+    if request.method == "GET":
+        form = AvatarForm()
+        contexto ={"form": form}
+        return render(request, "Proyecto/editar_avatar.html", contexto)
+        
 

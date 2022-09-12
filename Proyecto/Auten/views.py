@@ -7,6 +7,9 @@ from Auten.forms import *
 from django.contrib.auth.decorators import *
 
 from django.views.generic import *
+from Auten.models import *
+from Auten.forms import *
+
 
 def About(request):
     return render(request, "Auten/sobreMi.html")
